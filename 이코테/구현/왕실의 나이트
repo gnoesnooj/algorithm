@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public int solution(String position){
+        int answer = 0;
+        int cnt = 0;
+        int y = 0;
+
+        char c = position.charAt(0);
+
+        int x = Integer.parseInt(String.valueOf(position.charAt(1)));
+
+        char [] columns = {'a','b','c','d','e','f','g','h'};
+
+        for( char column : columns){
+            cnt++;
+            if(column == c) {
+                y = cnt;
+                break;
+            }
+        }
+
+        int [][] moves = {{-1, -2},{1,-2},{-1,-2},{-1,2},{1,-2},{1,2},{2,-1},{2,1}};
+
+        for(int i=0; i<moves.length; i++){
+            // x,y 좌표 넣어서 1보다 작거나 8보다 크면 카운트 X, 나머지 COUNT
+            int dx = x + moves[i][0];
+            int dy = y + moves[i][1];
+
+            if((dx < 1) || dy < 1 || dx> 8 || dy > 8)
+                continue;
+            else
+                answer++;
+        }
+
+
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        System.out.println(s.solution("a1"));
+    }
+}
