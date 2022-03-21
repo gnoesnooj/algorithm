@@ -1,0 +1,72 @@
+# 미로찾기
+# BFS 로 구현
+# 아직 못품 이해가 왜이리 안되는지..
+# 단순히 오른쪽 아래로 내려가면서 구하는 알고리즘이라 graph[x][y] 가 가진 값을 +1씩 해서 내려간다는 건 알겠는데, 
+# 내가 이대로 풀기 싫어서 그런건지 다른방법을 찾고싶어서 그런건지 모르겠는데 하여튼 머릿속으로 정리가 안됌..
+# 나중에 다시 풀어봐야할듯 !
+
+import java.io.*;
+import java.util.*;
+
+// 1이 갈수잇고 0이 못감
+// 종료 0이거나 이미 큐에있거나 종료위치 (N,M) 이거나
+public class Solution {
+    Queue<Node> q = new LinkedList<>();
+
+    static class Node{
+        int x;
+        int y;
+
+        public Node(int x, int y){
+            this.x=x;
+            this.y=y;
+        }
+
+        public int getX(){
+            return x;
+        }
+
+        public int getY(){
+            return y;
+        }
+    }
+    public int bfs(int x, int y, int [][] graph){
+
+        int [] dx = {-1, 1, 0, 0};
+        int [] dy = {0, 0, -1, 1}; // 상 하 좌 우
+
+        for(int i=0; i<4 ; i++){
+            int nx = x + dx[i];
+            int ny = x + dy[i];
+
+            if(nx < 1 || ny <1 || nx > graph.length || ny > graph[0].length || graph[nx][ny] == 0){ // 벽이거나 괴물이 있는 곳이라면
+                continue;
+            }
+            
+            
+
+            if(graph[nx][ny] == 1){ // 방문 하지 않았다면
+                graph[nx][ny] = graph[x][y] +1;
+                q.add(new Node(nx,ny)); // queue 에 넣어준다.
+            }
+        }
+        return graph[graph.length-1][graph[0].length-1];
+    }
+
+    public int solution(int x, int y, int [][] graph){
+        int answer= 0;
+        int count = 1;
+        answer = bfs(1,1,graph);
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        int [][] graph = {
+                {1, 1, 0},
+                {0, 1, 0},
+                {0, 1, 1}
+        };
+        System.out.println(s.solution(3,3,graph));
+    }
+}
