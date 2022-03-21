@@ -1,0 +1,30 @@
+public class Solution {
+    boolean dfs(int a, int b, int [][] graph){
+        if(a<0 || b<0 || a>= graph.length || b>=graph[0].length){
+            return false;
+        }
+        if(graph[a][b] == 0){
+            graph[a][b] = 1;
+            dfs(a-1,b,graph);
+            dfs(a,b-1,graph);
+            dfs(a+1, b, graph);
+            dfs(a, b+1, graph);
+            return true;
+        }
+        return false;
+    }
+
+    public int solution(int x, int y, int [][] graph){
+
+        int answer= 0;
+
+        for( int i=0 ; i<x ; i++ ){
+            for ( int j=0 ; j<y ; j++ ){
+                if(dfs(i,j, graph)){
+                    answer+=1;
+                }
+            }
+        }
+        return answer;
+    }
+}
