@@ -1,0 +1,27 @@
+    public boolean binary_search(int start, int end, int target, int [] numbers){
+        boolean hasTarget;
+
+        int mid = (start+end)/2;
+
+        if(numbers[mid] == target || numbers[start] == target || numbers[end] == target)
+            return true;
+
+        // numbers[mid] > target, end 값을 mid로 바꿔준다
+        if(numbers[mid] > target && end != mid){
+            return binary_search(start, mid, target, numbers);
+        }
+        // numbers[mid] < target, start 값을 mid 로 바꿔준다.
+        else if(numbers[mid] < target && start != mid){
+            return binary_search(start, mid, target, numbers);
+        }
+
+        return false;
+    }
+    public boolean[] solution(int x, int [] numbers, int targetNum, int [] targets){
+        boolean [] answer= new boolean[targetNum];
+        Arrays.sort(numbers);
+        for(int i=0 ; i<targetNum ; i++){
+            answer[i] = binary_search(0,x-1,targets[i],numbers);
+        }
+        return answer;
+    }
