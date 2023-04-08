@@ -35,3 +35,54 @@ public class Solution {
         return answer;
     }
 }
+
+// 1년만에 다시 
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    int answer;
+
+    public int solution(int goal, int[] lengths) {
+        answer = 0;
+        int max = 0;
+        for (int i : lengths) {
+            max = Math.max(max, i);
+        }
+        binary_search(0, max, lengths, goal);
+        return answer;
+    }
+
+    public void binary_search(int start, int end, int[] lengths, int goal) {
+        while(start <= end) {
+            int mid = (start + end) / 2;
+
+            System.out.println(start+" "+end+" "+mid);
+            if(check(mid,lengths) < goal){ // 떡을 잘랐는데, 목표 길이보다 짧음. 즉 너무 적게 짤랐을때
+                end = mid;
+            } else if (check(mid, lengths) > goal){
+                start = mid;
+            } else {
+                answer = mid;
+                break;
+            }
+        }
+    }
+
+    public int check(int value, int[] lengths) {
+        int sum = 0;
+        for (int i : lengths) {
+            if(i-value >= 0)
+                sum += i - value;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        int goal = 6;
+        int[] lengths = {19, 15, 10, 17};
+        int answer = s.solution(goal, lengths);
+        System.out.println("답 " + answer);
+    }
+}
