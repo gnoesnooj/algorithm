@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Solution {
+
+    int[] dx = {1, 0, 0, -1};
+    int[] dy = {0, -1, 1, 0};
+    String[] moveOps = {"d", "l", "r", "u"};
+    int miroX;
+    int miroY;
+    int endX;
+    int endY;
+    
+    List<String> answer = new ArrayList<String>();
+
+    public String solution(int x, int y, int startX, int startY, int eX, int eY, int k) {
+
+        miroX = x;
+        miroY = y;
+        endX = eX;
+        endY = eY;
+        String movings = "";
+
+        dfs(startX, startY, k, movings, "");
+
+        Collections.sort(answer);
+
+        return answer.size() == 0 ? "impossible" : answer.get(0);
+    }
+
+    public void dfs(int x, int y, int move, String movings, String moveOp) {
+        if (move == 0) {
+            if (x == endX && y == endY) {
+                movings += moveOp;
+                answer.add(movings);
+            }
+        }
+        
+        else {
+            movings += moveOp;
+            for (int i = 0; i < 4; i++) {
+                int nextX = x+dx[i];
+                int nextY = y+dy[i];
+                int diff = Math.abs(endX-nextX) + Math.abs(endY - nextY);
+                if(nextX >= 1 && nextY >= 1 && nextX <= miroX && nextY <= miroY){
+                    if(((move-1) % 2 == 0 && diff % 2 == 0) || ((move-1) % 2 != 0 && diff % 2 != 0)){
+                        if(diff <= move-1){
+                            dfs(nextX,nextY,move-1,movings,moveOps[i]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
