@@ -1,6 +1,38 @@
+import java.util.PriorityQueue;
+
+class Solution {
+    public int solution(int n, int k, int[] enemy) {
+        int answer = k;
+
+        if(k >= enemy.length) return enemy.length;
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for(int i=0 ; i<k ; i++) {
+            pq.offer(enemy[i]); // k개의 무적권을 일단 사용했다고 가정한다.
+        }
+
+        for(int i = k ; i < enemy.length ; i++){
+            if(pq.peek() < enemy[i]){ // pq안에 최솟값보다 enemy[i] 의 값이 더 크다면
+                n = n - pq.poll(); // 최솟값을 가지고 있는 군사 수로 처리하고
+                pq.offer(enemy[i]); // 큰 값을 넣어준다.
+            }
+            else if (pq.peek() >= enemy[i]){
+                n = n - enemy[i];
+            }
+
+            if(n < 0)
+                return answer;
+            else
+                answer++;
+        }
+
+        return answer;
+    }
+}
+
 /*
 현재 라운드를 어떻게든 클리어 했다면, 다음 라운드로 진행한다.
-*/
 class Solution {
     int answer = 0;
     public int solution(int n, int k, int[] enemy) {
@@ -27,3 +59,5 @@ class Solution {
     }
 }
 // 너무 큰 값으로 인한 런타임 에러 발생
+*/
+
