@@ -1,3 +1,25 @@
+class Solution {
+    public int solution(int storey) {
+        return dfs(storey);
+    }
+
+    public int dfs(int storey){
+        if(storey<=1)
+            return storey;
+
+        int left = storey / 10;
+        int now = storey % 10;
+
+        int upstair = now + dfs(left);
+        int downstair = (10-now) + dfs(left+1);
+
+        return Math.min(upstair, downstair);
+    }
+}
+
+
+
+
 /*
 * 5인 경우 무조건 내려가는 것으로 선택하여 풀이를 하였는데
 * 95인 경우는 올리는게 좋고, 15인 경우에는 버리는게 좋다.
@@ -36,7 +58,7 @@ class Solution {
     }
 }
 */
-
+/*
 class Solution {
     int answer = 0;
 
@@ -82,3 +104,4 @@ class Solution {
         }
     }
 }
+*/
