@@ -1,6 +1,6 @@
 // 이거 푸는데 너무 오래걸림
 // 접근하는게 어려웠음. SK ICT 였나 프로그래머스 백엔드코스 였나.. 그때 그문제랑 유사함
-
+/*
 import java.io.*;
 import java.util.*;
 
@@ -27,5 +27,26 @@ public class Solution {
         int [] money = {2,3};
         int answer = s.solution(num, k, money);
         System.out.println("answer = " + answer);
+    }
+}*/
+
+import java.util.*;
+
+public class Solution {
+
+    public int[] solution(int[] money, int goal) {
+        int dp[] = new int[goal + 1];
+
+        Arrays.fill(dp, 10001);
+
+        dp[0] = 0;
+        for (int i = money[0]; i <= goal; i++) {
+            for (int j : money) {
+                if ( i - j >= 0 && dp[i - j] != 10001) {
+                    dp[i] = Math.min(dp[i], dp[i - j] + 1);
+                }
+            }
+        }
+        return dp;
     }
 }
