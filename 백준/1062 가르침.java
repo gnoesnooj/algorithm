@@ -10,7 +10,7 @@ import java.util.*;
  * */
 public class Main {
 
-    static int N, K;
+    static int N, K, answer;
     static String[] words;
 
     static boolean[] used;
@@ -23,6 +23,7 @@ public class Main {
 
         N = Integer.parseInt(inputs[0]);
         K = Integer.parseInt(inputs[1]);
+        answer = Integer.MIN_VALUE;
 
         words = new String[N];
         used = new boolean[26];
@@ -50,7 +51,8 @@ public class Main {
             return;
         }
 
-
+        solve(0, 0);
+        System.out.println(answer);
     }
 
     // 사용한 알파벳, cnt는 사용한 알파벳 길이
@@ -58,12 +60,25 @@ public class Main {
         // k-5개중 필요한 알파벳을 조합 후
         // 최대 읽을 수 있는 단어 개수 찾기
         if (cnt == K - 5) {
-
+            int sum = 0;
+            for (int i = 0; i < words.length; i++) {
+                boolean isReadable = true;
+                for (int j = 0; j < words[i].length(); j++) {
+                    if (!used[words[i].charAt(j) - 'a']) {
+                        isReadable = false;
+                        break;
+                    }
+                }
+                if (isReadable) {
+                    sum += 1;
+                }
+            }
+            answer = Math.max(answer, sum);
         } else {
             for (int i = index; i < 26; i++) {
                 if (used[i] == false) {
                     used[i] = true;
-                    solve(i + 1, cnt+1);
+                    solve(i + 1, cnt + 1);
                     used[i] = false;
                 }
             }
