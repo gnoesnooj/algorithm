@@ -5,38 +5,45 @@ import java.util.*;
 
 public class Main {
 
+    static int N;
+
+    static int[] numbers;
+
+    static long[][] dp;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[n];
-        long[][] dp = new long[n][21];
 
-        String[] s = br.readLine().split(" ");
+        N = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(s[i]);
+        numbers = new int[N];
+        dp = new long[N][21];
+
+        String[] inputs = br.readLine().split(" ");
+        for (int i = 0; i < inputs.length; i++) {
+            numbers[i] = Integer.parseInt(inputs[i]);
         }
 
-        dp[0][arr[0]] = 1;
+        dp[0][numbers[0]] = 1;
 
-        int plus;
-        int minus;
-        for (int i = 1; i < n - 1; i++) {
-            for (int j = 0; j <= 20; j++) {
-                if (dp[i - 1][j] != 0) {
-                    plus = j + arr[i];
-                    minus = j - arr[i];
-                    if (plus >= 0 && plus <= 20) {
-                        dp[i][plus] += dp[i - 1][j];
+        for (int i = 0; i < N - 2; i++) {
+            for (int j = 0; j < 21; j++) {
+                if (dp[i][j] != 0) {
+                    int plus = j + numbers[i + 1];
+                    int minus = j - numbers[i + 1];
+
+                    if (plus <= 20) {
+                        dp[i + 1][plus] += dp[i][j];
                     }
-                    if (minus >= 0 && minus <= 20) {
-                        dp[i][minus] += dp[i - 1][j];
+
+                    if (minus >= 0) {
+                        dp[i + 1][minus] += dp[i][j];
                     }
                 }
             }
         }
 
-        System.out.println(dp[n - 2][arr[n - 1]]);
+        System.out.println(dp[N - 2][numbers[N - 1]]);
 
     }
 }
