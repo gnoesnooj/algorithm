@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class 12869_뮤탈리스크 {
+public class p12869_뮤탈리스크 {
 
     static int N, answer;
 
