@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class p1700_멀티탭스케줄링 {
 
     static int N, K;
     static int[] electronics;
