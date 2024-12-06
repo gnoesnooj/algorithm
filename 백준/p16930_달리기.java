@@ -1,12 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-/**
- * 다른 미로 탐색 문제와 다르게 초당 1~k 만큼 이동할 수 있다는 조건 때문에 boolean 의 방문탐색이 아닌, int 의 방문탐색을 선택해야한다.
- * 그래야 최솟값을 제대로 비교할 수 있다.
- * 문제를 푸는 사람의 탐색 방향에 따라 예를 들어 2초에 도달할 수 있는 위치를 2+n 초에 먼저 탐색되는 문제 때문에 최솟값을 탐지하지 못하게 될 수 있다.
- */
-public class p16930_달리기 {
+public class Main {
 
     static int N, M, K, sx, sy, ex, ey, answer = -1;
 
@@ -80,7 +75,12 @@ public class p16930_달리기 {
                     if (!isRange(mx, my) || miro[mx][my] == '#' || visited[mx][my] < visited[moving[0]][moving[1]] + 1) {
                         break;
                     }
-                    if (isRange(mx, my) && miro[mx][my] == '.' && visited[mx][my] == Integer.MAX_VALUE) {
+//                    if (isRange(mx, my) && miro[mx][my] == '.' && visited[mx][my] == Integer.MAX_VALUE) {
+//                        visited[mx][my] = visited[moving[0]][moving[1]] + 1;
+//                        movings.add(new int[]{mx, my});
+//                    }
+                    if (isRange(mx, my) && miro[mx][my] == '.' && visited[mx][my] > visited[moving[0]][moving[1]] + 1) { 
+                        // 해당 조건이 정답에 더 가까운 코드인듯. 위 주석처리된 부분은 정답처리가 되어선 안되는 것 같다..
                         visited[mx][my] = visited[moving[0]][moving[1]] + 1;
                         movings.add(new int[]{mx, my});
                     }
