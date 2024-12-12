@@ -2,67 +2,55 @@ import java.util.*;
 import java.io.*;
 
 public class p3197_백조의호수 {
-
     static int R, C;
-
     static char[][] miro;
-
     static Queue<int[]> waters = new LinkedList<>();
-
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, 1, -1};
-
     static boolean[][] visited;
-
     static List<int[]> swans = new ArrayList<>();
-
-    static Queue<int[]> swanMovings;
+    static Queue<int[]> swanNext;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         String[] inputs = br.readLine().split(" ");
-
         R = Integer.parseInt(inputs[0]);
         C = Integer.parseInt(inputs[1]);
-
         miro = new char[R][C];
 
-        String input;
-        for (int i = 0; i < R; i++) { // 1500 * 1500
-            input = br.readLine();
+        for (int i = 0; i < R; i++) {
+            String input = br.readLine();
             for (int j = 0; j < C; j++) {
                 miro[i][j] = input.charAt(j);
-                if (miro[i][j] == '.' || miro[i][j] == 'L') {
-                    waters.add(new int[]{i, j});
-                }
-                if (miro[i][j] == 'L') {
-                    swans.add(new int[]{i, j});
-                }
+                if (miro[i][j] == '.' || miro[i][j] == 'L') waters.add(new int[]{i, j});
+                if (miro[i][j] == 'L') swans.add(new int[]{i, j});
             }
         }
 
         int cnt = 0;
-        while (!waters.isEmpty()) {
-            if (isReachable()) {
+        visited = new boolean[R][C];
+        swanNext = new LinkedList<>();
+        swanNext.add(swans.get(0));
+        visited[swans.get(0)[0]][swans.get(0)[1]] = true;
+
+        while (true) {
+            if (isSwanMeet()) {
                 System.out.println(cnt);
                 return;
             }
-            melt();
+            meltIce();
             cnt++;
         }
     }
 
-    private static void melt() {
+    private static void meltIce() {
         int size = waters.size();
-
         for (int i = 0; i < size; i++) {
             int[] water = waters.poll();
             for (int d = 0; d < 4; d++) {
                 int nx = water[0] + dx[d];
                 int ny = water[1] + dy[d];
-
-                if (isRange(nx, ny) && miro[nx][ny] == 'X') { // 물로 만들어주고 다음에 넣어준다.
+                if (isRange(nx, ny) && miro[nx][ny] == 'X') {
                     miro[nx][ny] = '.';
                     waters.add(new int[]{nx, ny});
                 }
@@ -70,26 +58,22 @@ public class p3197_백조의호수 {
         }
     }
 
-    private static boolean isReachable() {
-        visited = new boolean[R][C];
-        swanMovings = new LinkedList<>();
-
-        swanMovings.add(swans.get(0));
-        while (!swanMovings.isEmpty()) {
-            int[] moving = swanMovings.poll();
+    private static boolean isSwanMeet() {
+        Queue<int[]> nextQueue = new LinkedList<>();
+        while (!swanNext.isEmpty()) {
+            int[] current = swanNext.poll();
             for (int d = 0; d < 4; d++) {
-                int nx = moving[0] + dx[d];
-                int ny = moving[1] + dy[d];
-
-                if(nx == swans.get(1)[0] && ny == swans.get(1)[1]){
-                    return true;
-                }
-                if (isRange(nx, ny) && miro[nx][ny] == '.' && !visited[nx][ny]) { // 주변이동할 수 있다면
+                int nx = current[0] + dx[d];
+                int ny = current[1] + dy[d];
+                if (nx == swans.get(1)[0] && ny == swans.get(1)[1]) return true;
+                if (isRange(nx, ny) && !visited[nx][ny]) {
                     visited[nx][ny] = true;
-                    swanMovings.add(new int[]{nx, ny});
+                    if (miro[nx][ny] == '.') swanNext.add(new int[]{nx, ny});
+                    else nextQueue.add(new int[]{nx, ny});
                 }
             }
         }
+        swanNext = nextQueue;
         return false;
     }
 
