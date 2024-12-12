@@ -68,8 +68,8 @@ public class p3197_백조의호수 {
                 if (nx == swans.get(1)[0] && ny == swans.get(1)[1]) return true;
                 if (isRange(nx, ny) && !visited[nx][ny]) {
                     visited[nx][ny] = true;
-                    if (miro[nx][ny] == '.') swanNext.add(new int[]{nx, ny});
-                    else nextQueue.add(new int[]{nx, ny});
+                    if (miro[nx][ny] == '.') swanNext.add(new int[]{nx, ny}); // 첫날에 탐색이 가능한 부분으로, 계속 탐색을 이어 나갈 수 있도록 한다.
+                    else nextQueue.add(new int[]{nx, ny}); // 첫날에 벽이었으므로 다음날엔 물이 되므로, 물이 되는 부분을 넣어줌으로서 이전날에 물이었던 부분을 재탐색할 필요를 줄여준다.
                 }
             }
         }
