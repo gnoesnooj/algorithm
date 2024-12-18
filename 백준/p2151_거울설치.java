@@ -51,8 +51,8 @@ public class p2151_거울설치 {
                     break;
                 }
                 if (miro[nx][ny] == '!') { // 거울 설치가 가능하면
-                    movings.add(new int[]{nx, ny, (d + 4 + 1) % 4, 1});
-                    movings.add(new int[]{nx, ny, (d + 4 - 1) % 4, 1}); // 90도 좌우로 꺾은거 넣어주기
+                    movings.add(new int[]{nx, ny, (i + 4 + 1) % 4, 1});
+                    movings.add(new int[]{nx, ny, (i + 4 - 1) % 4, 1}); // 90도 좌우로 꺾은거 넣어주기
                     visited[nx][ny] = 1;
                 }
             }
