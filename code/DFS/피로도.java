@@ -1,4 +1,6 @@
-class Solution {
+package DFS;
+
+class 피로도 {
     int answer = 0;
     boolean visited[] ;
     public int solution(int k, int[][] dungeons) {

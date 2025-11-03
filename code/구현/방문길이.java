@@ -1,3 +1,5 @@
+package 구현;
+
 /*
  * 처음 생각
  * - 1. 도착 지점 좌표 + 들어온 방향을 String 화한 후, 이를 set에 저장
@@ -16,11 +18,10 @@
  * L, D 의 경우 ) 도착 + 출발로 String 생성
  *  * */
 
-
 import java.util.HashSet;
 import java.util.Set;
 
-class Solution {
+class 방문길이 {
     Set<String> visited = new HashSet<>();
     int x = 0;
     int y = 0;

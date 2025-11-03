@@ -1,4 +1,6 @@
-class Solution {
+package 구현;
+
+class 당구연습 {
     public int[] solution(int startX, int startY, int[][] balls, int m, int n) {
         int[] answer = new int [balls.length];
         for (int i = 0; i < balls.length; i++) {
@@ -25,14 +27,5 @@ class Solution {
         int distanceX = (startX - goalX) * (startX - goalX);
         int distanceY = (startY - goalY) * (startY - goalY);
         return distanceX + distanceY;
-    }
-
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        int [][] balls = {{7,7},{2,7},{7,3}};
-        int [] result = s.solution(3,7,balls,10,10);
-        for(int r : result){
-            System.out.print(r + " ");
-        }
     }
 }

@@ -1,4 +1,4 @@
-// 구현
+package 구현;// 구현
 // 브루트포스
 // 조건에 맞게 구현
 // str = str.replaceAll("바뀌기전","바뀌기후") 처럼 사용 안한 실수
@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class 방금그곡 {
     static String answer;
     static int playedTime;
 
@@ -84,12 +84,4 @@ class Solution {
         return str;
     }
 
-    public static void main(String[] args) {
-        String m = 	"ABC";
-        String [] info = {"12:00,12:14,HELLO,C#DEFGAB", "13:00,13:05,WORLD,ABCDEF"};
-        Solution s = new Solution();
-        String answer = s.solution(m,info);
-
-        System.out.println(answer);
-    }
 }

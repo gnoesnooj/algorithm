@@ -1,4 +1,4 @@
-/* DFS 1차 시도
+package DFS;/* DFS 1차 시도
 
 class Solution {
     int[] answer;
@@ -65,7 +65,7 @@ class Solution {
 
 */
 
-class Solution {
+class 양궁대회 {
     int[] appeach;
     int[] answer = {-1};
 

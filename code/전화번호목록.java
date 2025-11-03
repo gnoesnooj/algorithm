@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-class Solution {
+class 전화번호목록 {
     public boolean solution(String[] phone_book) {
         boolean answer = true;
         String a = "a";

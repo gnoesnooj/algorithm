@@ -1,5 +1,6 @@
+package DFS;
 
-class Solution {
+class 네트워크 {
 
     int answer = 0;
     boolean[][] visited;

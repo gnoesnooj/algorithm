@@ -1,4 +1,4 @@
-/*
+package D4;/*
  * 1. x y 의 절댓값 max 값 찾기
  * 2. 해당 값보다 큰, 제일 가까운 3의 제곱수를 찾는다 (Math.pow 로 가까운거 찾기)
  * 3. 제곱수가 3의 X 제곱일 경우, X부터 0까지 FOR문을 돈다
@@ -7,7 +7,7 @@
 import java.util.Scanner;
 import java.io.FileInputStream;
 
-class Solution {
+class 로봇 {
 	public static void main(String args[]) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		int T;

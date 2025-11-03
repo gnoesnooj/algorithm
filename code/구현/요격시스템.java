@@ -1,6 +1,8 @@
+package 구현;
+
 import java.util.*;
 
-class Solution {
+class 요격시스템 {
     public int solution(int[][] targets) {
         int answer = 1;
         

@@ -5,7 +5,7 @@
 
 import java.util.*;
 
-class Solution
+class 짝지어제거하기
 {
     public int solution(String s)
     {
