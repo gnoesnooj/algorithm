@@ -13,7 +13,7 @@ import java.util.Queue;
  * dx, dy를 상우하좌 순서로 배열한 다음, direction 을 오른쪽에 해당하는 1로 초기화 해놓는다.
  * 이후 L과 D에 따라, 조건에 맞게 direction을 바꿔준다.
  */
-public class Main {
+public class BJ_3190_뱀_예준성 {
 
     static int[][] miro;
     static boolean[][] visited;

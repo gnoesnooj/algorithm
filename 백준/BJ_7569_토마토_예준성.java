@@ -8,7 +8,7 @@ import java.util.Queue;
  * 메모리 149808kb 시간 884ms
  * 3차원 배열을 만든 후, 조건에 맞게 BFS를 진행해준다.
  */
-public class Main {
+public class BJ_7569_토마토_예준성 {
 
     static int[][][] tomatoes;
 

@@ -93,7 +93,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
  
-class Solution {
+class 순위검색 {
     static HashMap<String, List<Integer>> map;
  
     public static int[] solution(String[] info, String[] query) {

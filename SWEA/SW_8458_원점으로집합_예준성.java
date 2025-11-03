@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  * 5. 이후 가장 큰 값만 원점으로 들어오면 다른 친구들은 원점에서 놀고 있을테니
  *    가장 큰 값이 원점에 언제들어오는지만 세서 결과를 리턴해준다.
  */
-public class Solution {
+public class SW_8458_원점으로집합_예준성 {
 
     static int N;
     static long[] numbers;

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * 경사로가 이미 있는지에 대해선 boolean 배열을 사용한다.
  */
 
-public class Main {
+public class BJ_14890_경사로_예준성 {
     static int N, length;
     static int answer;
     static int[][] roads;

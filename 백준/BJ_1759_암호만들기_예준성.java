@@ -11,7 +11,7 @@ import java.util.*;
  * 2. 정렬된 알파벳 배열을 가지고 길이가 L인 순열들을 뽑는다.
  * 3. 자음 2개 이상, 모음 1개 이상인 조건을 맞으면 결과에 리턴해준다.
  * */
-public class Main {
+public class BJ_1759_암호만들기_예준성 {
 
     static int L, R;
     static char[] c;  // 문자를 담아놓을 배열

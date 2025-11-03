@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+
+class 표편집 {
+    public String solution(int n, int k, String[] cmd) {
+        List<Integer> list = new LinkedList<>();
+        for(int i=0 ; i<n ; i++){
+            list.add(i);
+        }
+        int pointer = k;
+        String result = "";
+        Stack<Integer> garbage = new Stack<>();
+        Stack<Integer> garbagePoint = new Stack<>();
+
+        for(String order : cmd){
+            if(order.charAt(0) == 'U'){ // 올라가는데 list 0보다 작아질경우
+                int x = order.charAt(2) - '0';
+                if(pointer - x >= 0)
+                    pointer = pointer - x;
+                else
+                    pointer = 0;
+            }
+            if(order.charAt(0) == 'D'){ // 내려가려는데 list 크기를 벗어날 경우
+                int x = order.charAt(2) - '0';
+                if(pointer + x < n)
+                    pointer = pointer + x;
+                else
+                    pointer = n-1;
+            }
+            if(order.charAt(0) == 'C'){ // 삭제시 > 1. list를 get한 후 stack에 push , 2. list에 remove 3. pointer는 조건에 따라 이동
+                if(pointer == n-1){ // 제일 아래일때
+                    garbage.push(list.get(pointer));
+                    list.remove(pointer);
+                    garbagePoint.push(pointer); // 삭제될 당시의 pointer 를 저장
+                    pointer = pointer - 1;
+                } else{
+                    garbage.push(list.get(pointer));
+                    list.remove(pointer);
+                    garbagePoint.push(pointer); // 삭제될 당시의 pointer 를 저장
+                }
+            }
+            if(order.charAt(0) == 'Z'){
+                list.add(garbagePoint.pop(), garbage.pop());
+            }
+        }
+        for(int i=0 ; i<list.size() ; i++){
+            result += list.get(i);
+        }
+        String answer = "";
+        for(int i=0; i<n; i++){
+            if(result.contains(Integer.toString(i)))
+                answer +="O";
+            else
+                answer +="X";
+        }
+        return answer;
+        
+    }
+}
+
+// 테스트 케이스 통과를 못함 ㅠ

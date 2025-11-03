@@ -1,5 +1,3 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +8,7 @@ import java.util.List;
  * 메모리 18,640 kb 실행시간 110 ms
  * 톱니바퀴가 회전하는 것에 맞게 가중치를 통해서 필요한 인덱스를 비교하고, 그에 맞게 새로운 가중치를 부여해나간다.
  */
-public class Solution {
+public class SW_4013_특이한자석_예준성 {
 
 	static int K, answer;
 	static int[][] magnets;

@@ -12,7 +12,7 @@ import java.util.Stack;
  * - 벽돌 내리기 : stack 이용해서 벽돌 내려주기
  * - 결과값 비교하기 : Math.min 사용
  */
-public class Solution {
+public class SW_5656_벽돌깨기_예준성 {
 
     static int N, W, H, answer;
     static int[][] blocks;

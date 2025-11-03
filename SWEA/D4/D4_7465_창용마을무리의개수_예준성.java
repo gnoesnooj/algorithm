@@ -1,4 +1,4 @@
-package lgo;
+package D4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solution {
+public class D4_7465_창용마을무리의개수_예준성 {
 
 	static int N, M;
 	static int[] parent;

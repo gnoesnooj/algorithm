@@ -12,7 +12,7 @@ import java.util.Queue;
  * bfs에서 처음 좌표를 방문처리만하고 인구이동에 넣어주지 않아서 한시간넘게 날렸다
  * */
 
-public class Main {
+public class BJ_16234_인구이동_예준성 {
     static int N, L, R, answer;
 
     static int[][] countries;

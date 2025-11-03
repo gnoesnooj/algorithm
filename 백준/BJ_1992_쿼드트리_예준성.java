@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
  * 만일 size가 2인데 sum의 값이 0 또는 4 가 아닌 경우에는, 4개의 값을 모두 출력해준다.
  * */
 
-public class Main {
+public class BJ_1992_쿼드트리_예준성 {
 
     static int N;
 

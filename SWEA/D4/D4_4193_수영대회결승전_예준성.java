@@ -1,4 +1,4 @@
-package lgo;
+package D4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.Queue;
  * q에서 poll 후 bfs 할 때, q.size 만큼 하면 원하는 시간 n초에 탐색을 할 수있다.
  * 또한 poll 후 bfs 할 때, 소용돌이처럼 조건에 맞지 않다면 원하는 시간에 탐색이 될 수 있게 다시 큐에 넣어준다.
  */
-public class Solution {
+public class D4_4193_수영대회결승전_예준성 {
 
 	static int N, answer;
 	static int[][] miro;

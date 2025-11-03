@@ -9,7 +9,7 @@ import java.util.*;
  * 
  * 문제 조건에 맞게 구현해준다. 순열+완탐으로 cctv 방향을 뽑아주고 사각지대를 찾은 후 최소값을 리턴해준다.
  */
-public class Main {
+public class BJ_15683_감시_예준성 {
 	static int answer = Integer.MAX_VALUE;
 	static boolean[] visited;
 	static int[] cctv_direction; // 뽑아줄 cctv 방향 중복순열

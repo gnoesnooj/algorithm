@@ -8,7 +8,7 @@ import java.util.*;
  * 시간 172
  * dp 배열 생성 후 점화 식 찾고, 목표 값을 찾아준다.
  * */
-public class Main {
+public class BJ_1010_다리놓기_예준성 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);

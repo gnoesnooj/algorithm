@@ -1,0 +1,20 @@
+// 2022/02/18
+// startWith 에 대해 알게 됨.
+// 2 32 444 ... 와 같은 상황일 때, 2가 32에 포함이 되지만, 접두사가 아니기 때문에 테스트 케이스 13이 통과되지 않았음..
+
+import java.util.*;
+
+class Solution {
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;
+        String a = "a";
+        String b = "a";
+        System.out.print(a.contains(b));
+        Arrays.sort(phone_book);
+        for(int i=1 ; i<phone_book.length; i++){
+            if(phone_book[i].contains(phone_book[i-1]) 
+               && phone_book[i-1].equals(phone_book[i].substring(0,phone_book[i-1].length()))) return false;
+        }
+        return true;
+    }
+}

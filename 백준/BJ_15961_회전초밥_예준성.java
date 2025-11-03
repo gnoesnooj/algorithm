@@ -10,7 +10,7 @@ import java.util.*;
  * 모든 값을 입력을 받고 나서, k-1 개 배열만큼 추가로 계산해준다.
  * -> 0 , 1 , 2 , 3 중 3개를 뽑는다고 할 때, 2 3 0, 3 0 1 과 같은 경우도 계산해야 하기 때문이다.
  * */
-public class Main {
+public class BJ_15961_회전초밥_예준성 {
 
     static int N, d, k, c;
     static int answer, max = 0;

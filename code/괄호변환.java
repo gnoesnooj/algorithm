@@ -5,7 +5,7 @@
 // 다시 풀어볼예정
 // 아래의 코드는 check() 를 해주는 부분이 인상깊어서 ? 가져오게 되었다.
 
-class Solution {
+class 괄호변환 {
     public String solution(String p) {
         StringBuilder sb = new StringBuilder();
         

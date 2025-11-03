@@ -1,16 +1,12 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * 메모리 18,640 kb 실행시간 110 ms 1.
  */
-public class Solution {
+public class SW_2112_보호필름_예준성 {
 
 	static int D, W, K, answer;
 	static int[][] miro;

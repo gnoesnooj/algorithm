@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  * i-1 번쨰의 Green를 사용한 값과 Blue를 사용한 최소비용 중 더 작은 값에 i 번째 red의 비용을 더한 값이 된다.
  */
 
-public class Main {
+public class BJ_1149_RGB거리_예준성 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

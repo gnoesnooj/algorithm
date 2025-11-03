@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solution {
+public class 개미전사 {
 
     public int solution(int n, int[] food) {
         int answer[] = new int[n];
@@ -13,13 +13,5 @@ public class Solution {
         }
 
         return answer[n - 1];
-    }
-
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        int[] food = {1, 3, 1, 5, 10};
-
-        int answer = s.solution(5, food);
-        System.out.println(answer);
     }
 }

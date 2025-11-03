@@ -10,7 +10,7 @@ import java.util.*;
  * 4. 해당 . 좌표로 이동해서. 나가야할 방향을 찾는다.
  * 5. 올바른 값을 넣어준다.
  * */
-public class Main {
+public class BJ_2931_가스관 {
 
 	static String [][] miro;
 	static int X, Y;

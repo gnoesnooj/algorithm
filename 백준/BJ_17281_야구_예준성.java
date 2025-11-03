@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
  * 메모리 229668kb
  * 시간 964ms
  * */
-public class Main {
+public class BJ_17281_야구_예준성 {
     static int player[][], lineUp[], T, max, count;
     static ArrayDeque<Integer> hit;
     static boolean used[];

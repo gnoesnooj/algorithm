@@ -1,3 +1,5 @@
+package D2;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +17,7 @@ import java.util.*;
  * 시간 110 ms
  */
 
-public class Solution {
+public class D2_나무높이_예준성 {
 
     static int[] trees;
 

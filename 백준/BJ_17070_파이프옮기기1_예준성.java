@@ -8,7 +8,7 @@ import java.util.*;
  * 시간 172
  * dp 배열 생성 후 점화 식 찾고, 목표 값을 찾아준다.
  * */
-public class Main {
+public class BJ_17070_파이프옮기기1_예준성 {
 	static int [][] miro;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

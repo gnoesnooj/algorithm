@@ -1,0 +1,64 @@
+// 220201
+// 뭐가문제인지 아직 모르겠다
+// 회전하는 순서의 문제 ?
+// 첫 회전에 들어가면 안되는 값이 들어감
+
+class 행렬테두리회전하기 {
+    public int[] solution(int rows, int columns, int[][] queries) {
+        
+        int [][] table = new int[rows][columns];
+        int [] answer = new int[queries.length];
+        
+        //mapping
+        int num=1;
+        for(int i=0; i<rows; i++){
+            for(int j=0 ; j<columns ; j++){
+                table[i][j] = num;
+                num++;
+            }
+        }
+        
+        //make points -> a(a1, a2) , b(b1, b2)
+        for(int round=0 ; round<queries.length ; round++){
+            int [] query = queries[round];
+            
+            int a1 = query[0]-1;
+            int a2 = query[1]-1;
+            int b1 = query[2]-1;
+            int b2 = query[3]-1;
+            
+            int tmp = table[b1][a2];
+            int min = tmp;
+            
+            //rotate
+            //top
+            for(int i=b1-1 ; i>=a1 ; i--){
+                min = Math.min(min, table[i][a2]);
+                table[i+1][a2] = table[i][a2];
+                System.out.println(round + " top : " + table[i][a2]);
+            }
+            //left
+            for(int i=a2+1 ; i<=b2 ; i++){
+                min = Math.min(min, table[a1][i]);
+                table[a1][i-1] = table[a1][i];
+            }
+            //down
+            for(int i=a1+1 ; i<=b1 ; i++){
+                min = Math.min(min, table[i][b2]);
+                table[i-1][b2] = table[i][b2];
+            }
+            //right
+            for(int i=b2-1 ; i>=a2 ; i--){
+                min = Math.min(min, table[b1][i]);
+                if(i==a2)
+                    table[b1][i+1] = tmp;
+                else
+                    table[b1][i+1] = table[b1][i];
+            }
+            answer[round] = min;
+        }
+        
+    
+        return answer;
+    }
+}

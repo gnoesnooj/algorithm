@@ -9,7 +9,7 @@ import java.util.Queue;
  * 실행 시간 104
  * 물 확산을 먼저 시켜 준 후, 도치를 이동시켜 준다.
  * */
-public class Main {
+public class BJ_3055_탈출_예준성 {
 
     static char[][] miro;
     static boolean[][] visited;

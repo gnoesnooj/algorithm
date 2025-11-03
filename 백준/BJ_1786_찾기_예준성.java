@@ -10,7 +10,7 @@ import java.util.List;
  *
  * KMP 알고리즘 사용
  */
-public class Main {
+public class BJ_1786_찾기_예준성 {
 
     static String parent;
     static String part;

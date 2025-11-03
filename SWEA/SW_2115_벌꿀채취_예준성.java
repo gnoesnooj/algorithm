@@ -1,16 +1,11 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * 메모리 25,804 kb 실행시간 144 ms
  */
-public class Solution {
+public class SW_2115_벌꿀채취_예준성 {
 
 	static int N, M, C, answer, A,B;
 	static int[][] honey;

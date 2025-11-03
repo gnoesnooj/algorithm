@@ -1,3 +1,5 @@
+package D4;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,7 +8,7 @@ import java.util.*;
 /**
  * 125,988 kb 메모리 2,006 ms 실행시간
  */
-public class Solution {
+public class D4_3124_최소스패닝트리_예준성 {
 
 	static int[] parents;
 	static int V, E;

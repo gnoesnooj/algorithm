@@ -1,5 +1,3 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,7 +11,7 @@ import java.util.Queue;
  * 
  * bfs로 탐색하면서 길뚫어주기 -> 작은값 생길떄마다 새로운길 찾은거니까 값 바꿔주면서 bfs 진행하기
  * */
-public class Main {
+public class BJ_4485_녹색옷입은애가젤다지_예준성 {
 	
 	static int N;
 	static int [][] miro;

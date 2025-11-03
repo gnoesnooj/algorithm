@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-class Solution{
+class 튜플{
     public int[] solution(String s){
         Map<Integer, String[]> map = new HashMap<>();
         Set<String> set =new HashSet<>();

@@ -1,18 +1,13 @@
-package lgo;
-
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 /**
  * 메모리	299308	
  * 시간 1644
  * 들어갈 수 있는 수를 넣으면서 가로, 세로, 네모가 1~9 중 하나씩 들어가 있는지를 체크하며 dfs를 한다.
  * 처음으로 나온 정답에 대해서 결과를 출력하고 나머지는 출력하지 않는다.
  * */
-public class Main {
+public class BJ_2239_스도쿠 {
 
 	static int[][] miro = new int[9][9];
 

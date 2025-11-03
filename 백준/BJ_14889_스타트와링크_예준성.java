@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * 3. 최소 비교 후 결과 리턴
  * */
 
-public class Main {
+public class BJ_14889_스타트와링크_예준성 {
 
     static int N;
     static boolean[] selected;

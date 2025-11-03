@@ -13,7 +13,7 @@ import java.util.*;
  * 5. 가능하면 1, 불가능하면 0을 출력하므로, answer 가 0일때만 dfs를 진행하게 하여 가지치기를 해준다.
  * 
  * */
-public class Main {
+public class BJ_13023_ABCDE_예준성 {
 	
 	static ArrayList<Integer>[] friends;
 	static int answer = 0;

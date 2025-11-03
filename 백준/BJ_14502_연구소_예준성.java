@@ -9,7 +9,7 @@ import java.util.List;
  * 시간 352ms
  * 벽 3개 뽑고 -> 바이러스 확산 시키고 -> 0 개수 구하고 -> 제일 큰값 리턴해주기
  * */
-public class Main {
+public class BJ_14502_연구소_예준성 {
 
     static int miro[][];
     static int[][] copied;

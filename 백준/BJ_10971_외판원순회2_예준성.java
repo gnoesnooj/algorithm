@@ -7,7 +7,7 @@ import java.util.*;
  * 메모리 13852KB 실행시간 388ms
  * 순열로 뽑아준 다음, 그래프가 이어져있는지, 순회가 되는지 확인 후 결과를 계산해준다.
  */
-public class Main {
+public class BJ_10971_외판원순회2_예준성 {
 	static int N;
 	static int[][] graph;
 	static boolean[] visited;

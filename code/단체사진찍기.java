@@ -9,7 +9,7 @@
 */
 import java.util.*;
 
-class Solution {
+class 단체사진찍기 {
     static String[] d;
     static HashMap<Character,Integer> map ;
     static boolean[] visited;

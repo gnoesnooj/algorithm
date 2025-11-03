@@ -1,0 +1,44 @@
+// 220127
+// 미해결
+
+import java.util.*;
+
+public class 오픈채팅방 {
+    public String[] solution(String [] record){
+        Map<String, String> map = new HashMap<>();
+        int cnt = 0;
+
+        for(String s : record){
+            String [] temp = s.split(" ");
+
+            if(temp[0].charAt(0)=='L') continue;
+            else if(temp[0].charAt(0)=='E'){
+
+                if(map.get(temp[1])!=null){
+                    map.replace(temp[1],temp[2]);
+                }else
+                    map.put(temp[1], temp[2]); // id, NickName
+
+            }else{
+                map.replace(temp[1],temp[2]);
+                cnt++;
+            }
+        }
+
+        String [] answer = new String[record.length - cnt];
+
+        for(int i=0 ; i < answer.length ; i++){
+            String [] temp = record[i].split(" ");
+            if(temp[0].charAt(0)=='E'){
+                answer[i] = map.get(temp[1])+"님이 들어왔습니다.";
+            }else if(temp[0].charAt(0)=='L'){
+                answer[i] = map.get(temp[1])+"님이 나갔습니다.";
+            }else
+                continue;
+        }
+
+        return answer;
+    }
+
+   
+}

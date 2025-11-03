@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * i j 의 값은 3방향 값중 최대값을 자기자신의 값과 더한 것과 같으므로, 이를 이용해서 점화식을 만든 후 최대값을 구해나간다.
  * */
 
-public class Main {
+public class BJ_11048_이동하기_예준성 {
 
 	static int[][] candy;
 

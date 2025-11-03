@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class p16930_달리기 {
 
     static int N, M, K, sx, sy, ex, ey, answer = -1;
 

@@ -9,7 +9,7 @@ import java.util.Queue;
  * 메모리 24960 실행 시간 200
  * 문제에 나온대로 구현한다.
  */
-public class Main {
+public class BJ_21610_마법사상어와비바라기_예준성 {
 
     // 전체 맵
     static int[][] miro;

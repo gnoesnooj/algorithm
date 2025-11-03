@@ -1,3 +1,5 @@
+package 그리디;
+
 import java.util.Arrays;
 
 /*
@@ -11,7 +13,7 @@ import java.util.Arrays;
  * 수정 )
  * 3. 한 번에 2명씩만 탑승 가능하므로, max값 한번, min값 한번씩만 체크해준다.*/
 
-class Solution {
+class 구명보트 {
     public int solution(int[] people, int limit) {
         int answer = 0;
 

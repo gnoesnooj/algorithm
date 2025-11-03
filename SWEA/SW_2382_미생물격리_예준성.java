@@ -1,5 +1,3 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,7 +7,7 @@ import java.util.List;
 /**
  * 20,484 kb 메모리 175 ms 실행시간
  */
-public class Solution {
+public class SW_2382_미생물격리_예준성 {
 
 	static int N, M, K, answer;
 	static int[][] cell;

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * 문제 조건대로 구현해준다.
  * */
 
-public class Main {
+public class BJ_21608_상어초등학교_예준성 {
 
     static int N;
     // 애들 자리

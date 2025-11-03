@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-class Solution {
+class 기능개발 {
     
     public int[] getProgressesByDay(int[] progresses, int[] speeds, int day){
         for(int i=0 ; i<progresses.length ; i++){

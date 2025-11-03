@@ -1,5 +1,3 @@
-package lgo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,7 +18,7 @@ import java.util.Set;
  * 4. list를 통해 크기 역순 정렬
  * 5. 결과리턴
  */
-public class Solution {
+public class SW_5658_보물상자비밀번호_예준성 {
 
 	static int N, K;
 	static Map<String, Integer> map = new HashMap<>();;
@@ -70,10 +68,6 @@ public class Solution {
 			if(i>=N)tmp[N/4 - 1 - (cnt++)] = numbers[i%N];
 			else tmp[N/4 - 1 - (cnt++)] = numbers[i];
 		}
-//		for(String t : tmp)
-//			System.out.print(t);
-//		System.out.println();
-		// 거꾸로 넣어주기
 		calc(tmp);
 	}
 	

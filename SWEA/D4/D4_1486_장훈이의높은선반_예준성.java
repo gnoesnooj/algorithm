@@ -1,4 +1,4 @@
-package lgo;
+package D4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.Queue;
  * 20,484 kb 메모리
  * 175 ms 실행시간
  */
-public class Solution {
+public class D4_1486_장훈이의높은선반_예준성 {
 
 	static int N, B, answer;
 	static int people [];

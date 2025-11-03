@@ -11,7 +11,7 @@ import java.util.Queue;
  * 실행시간
  * 학생 기준으로 위쪽 탐색, 아래쪽 탐색 후 두 탐색의 결과 합이 N-1 이라면 본인의 위치를 알 수 있음.
  * */
-public class Solution {
+public class SW_5643_키순서_예준성 {
 
     static int N, M;
     static int[][] students;

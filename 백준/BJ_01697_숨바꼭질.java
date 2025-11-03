@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class BJ_01697_숨바꼭질 {
 
 	/**
 	 * bfs 를 통해 K의 최단 경로를 찾아낸다.

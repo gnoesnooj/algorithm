@@ -10,7 +10,7 @@ import java.util.*;
  * 3. 위의 두 조건을 만족하면 답이 될 듯 하다
  */
 
-public class Main {
+public class BJ_19539_사과나무_예준성 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
