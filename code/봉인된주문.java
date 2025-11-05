@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-class Solution {
+class 봉인된주문 {
     static String alpha = "abcedfghijklmnopqrstuvwxyz";
 
     public String solution(long n, String[] bans) {

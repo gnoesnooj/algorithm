@@ -19,7 +19,7 @@ for root, _, files in os.walk(base_dir):
 
             class_name = filename_only
 
-            # --- 파일 내용 읽기 ---
+            # 파일 내용 읽기
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
