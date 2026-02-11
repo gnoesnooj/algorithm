@@ -1,4 +1,6 @@
-class Solution {
+package 구현;
+
+public class 크기가_작은_부분문자열 {
     static long number = 0;
     static int answer = 0;
 
