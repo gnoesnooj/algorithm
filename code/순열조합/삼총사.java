@@ -1,7 +1,6 @@
-import java.util.*;
-import java.util.stream.Collectors;
+package 순열조합;
 
-class Solution {
+public class 삼총사 {
     static int number = 0;
     static int[] people;
     static int answer = 0;
@@ -9,7 +8,7 @@ class Solution {
     public int solution(int[] numbers) {
         number = numbers.length;
         people = numbers;
-        comb(0,0,0);
+        comb(0, 0, 0);
 
         return answer;
     }
