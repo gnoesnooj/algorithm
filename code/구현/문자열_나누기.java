@@ -1,4 +1,6 @@
-class Solution {
+package 구현;
+
+class 문자열_나누기 {
     public int solution(String s) {
         int answer = 0;
 
