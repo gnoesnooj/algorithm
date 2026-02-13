@@ -1,6 +1,7 @@
+package 구현;
 import java.util.*;
 
-class Solution {
+class 대충_만든_자판 {
     public int[] solution(String[] keymap, String[] targets) {
         int[] answer = new int[targets.length];
         Map<Character, Integer> dict = new HashMap<>();
