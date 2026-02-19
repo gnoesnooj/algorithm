@@ -1,8 +1,9 @@
-import java.util.HashMap;
+package 구현;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Solution {
+class 프로세스 {
     static int max = 0;
     static boolean[] visited;
 
