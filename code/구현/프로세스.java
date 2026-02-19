@@ -4,44 +4,49 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class 프로세스 {
-    static int max = 0;
-    static boolean[] visited;
+
+    static class Document {
+        int index;
+        int priority;
+
+        Document(int index, int priority) {
+            this.index = index;
+            this.priority = priority;
+        }
+    }
 
     public int solution(int[] priorities, int location) {
-        int answer = 0;
-        visited = new boolean[priorities.length];
+        Queue<Document> queue = new LinkedList<>();
 
-        Queue<Integer> queue = new LinkedList<>();
-
-        //queueing
-        for (int number = 0; number < priorities.length; number++) {
-            queue.add(number);
+        // 큐 초기화
+        for (int i = 0; i < priorities.length; i++) {
+            queue.offer(new Document(i, priorities[i]));
         }
 
-        getMaxValue(priorities);
-        // peek
+        int answer = 0;
+
         while (!queue.isEmpty()) {
-            int number = queue.poll();
-            if (priorities[number] < max) { // 실행이 안될때
-                queue.add(number);
-            } else { // 실행될때
+            Document current = queue.poll();
+
+            if (hasHigherPriority(queue, current.priority)) {
+                queue.offer(current);
+            } else {
                 answer++;
-                visited[number] = true;
-                if (number == location) {
-                    break;
+                if (current.index == location) {
+                    return answer;
                 }
-                getMaxValue(priorities);
             }
         }
+
         return answer;
     }
 
-    private void getMaxValue(int[] values) {
-        max = 0;
-        for (int i = 0; i < values.length; i++) {
-            if (!visited[i]) {
-                max = Math.max(max, values[i]);
+    private boolean hasHigherPriority(Queue<Document> queue, int priority) {
+        for (Document doc : queue) {
+            if (doc.priority > priority) {
+                return true;
             }
         }
+        return false;
     }
 }
