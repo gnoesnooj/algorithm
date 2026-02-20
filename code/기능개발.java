@@ -4,55 +4,36 @@
 
 import java.util.*;
 
+import java.util.*;
+
 class 기능개발 {
-    
-    public int[] getProgressesByDay(int[] progresses, int[] speeds, int day){
-        for(int i=0 ; i<progresses.length ; i++){
-            progresses[i]+= speeds[i]*day;
-        }
-        return progresses;
-    }
-    
+
     public int[] solution(int[] progresses, int[] speeds) {
-        int day = 0;
-        int completed = 0;
-        ArrayList<Integer> arrList = new ArrayList<Integer>();
-        for(int i=0 ; i<progresses.length ; i++){
-            if(progresses[i] >= 100){
-                day = 0;
-                completed++;
-            }else{
-                if(completed != 0){
-                    arrList.add(completed);
-                    completed = 0;
-                    while(progresses[i] < 100){
-                        progresses[i] += speeds[i];
-                        day++;
-                    }
-                    completed++;
-                    progresses = getProgressesByDay(progresses, speeds, day);
-                    day = 0;
-                }else{
-                    while(progresses[i] < 100){
-                        progresses[i] += speeds[i];
-                        day++;
-                    }
-                    completed++;
-                    progresses = getProgressesByDay(progresses, speeds, day);
-                    day = 0;
+        List<Integer> result = new ArrayList<>();
+
+        int n = progresses.length;
+        int prevDay = 0; // 앞 작업의 완료일
+        int count = 0; // 함께 배포되는 작업 수
+
+        for (int i = 0; i < n; i++) {
+            // 현재 작업 완료까지 필요한 일수
+            int day = (int) Math.ceil((100.0 - progresses[i]) / speeds[i]);
+
+            if (day > prevDay) {
+                // 새로운 배포 시작
+                if (count > 0) {
+                    result.add(count);
                 }
+                prevDay = day;
+                count = 1;
+            } else {
+                // 이전 작업과 함께 배포
+                count++;
             }
-            if(i == progresses.length -1){
-                    arrList.add(completed);
-            }
-        }
-        int cnt = 0;
-        int [] answer = new int [arrList.size()];
-        for(int i : arrList){
-            answer[cnt] = i;
-            cnt++;
         }
 
-        return answer;
+        result.add(count);
+
+        return result.stream().mapToInt(i -> i).toArray();
     }
 }
