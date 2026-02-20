@@ -4,8 +4,6 @@
 
 import java.util.*;
 
-import java.util.*;
-
 class 기능개발 {
 
     public int[] solution(int[] progresses, int[] speeds) {
