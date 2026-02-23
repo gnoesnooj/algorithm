@@ -1,6 +1,8 @@
+package 구현;
+
 import java.util.*;
 
-class Solution {
+class 주차요금계산 {
 
     static Map<String, Integer> money = new HashMap<>();
     static int basicTime;
