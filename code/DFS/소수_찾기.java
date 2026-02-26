@@ -1,7 +1,9 @@
+package DFS;
+
 import java.util.HashSet;
 import java.util.Set;
 
-class Solution {
+class 소수_찾기 {
     static char[] papers;
     static boolean[] visited;
     static Set<Integer> set;
