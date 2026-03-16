@@ -1,6 +1,7 @@
+package 탐색;
 import java.util.*;
 
-class Solution {
+class 무인도여행 {
     static char[][] miro;
     static boolean[][] visited;
     static int[] dx = {-1, 1, 0, 0};
