@@ -1,4 +1,4 @@
-package DFS;
+package 탐색;
 
 class 피로도 {
     int answer = 0;

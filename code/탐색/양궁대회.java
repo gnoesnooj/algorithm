@@ -1,4 +1,4 @@
-package DFS;/* DFS 1차 시도
+package 탐색;/* DFS 1차 시도
 
 class Solution {
     int[] answer;

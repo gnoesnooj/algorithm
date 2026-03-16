@@ -1,4 +1,4 @@
-package DFS;
+package 탐색;
 
 class 네트워크 {
 

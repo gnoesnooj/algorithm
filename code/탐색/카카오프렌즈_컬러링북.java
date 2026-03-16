@@ -1,4 +1,4 @@
-package DFS;
+package 탐색;
 
 // 전역변수를 solution 내에서 초기화해주기
 // int 배열의 크기인 첫 매개변수 pciture를 long으로 복사해주기

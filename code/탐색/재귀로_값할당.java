@@ -1,4 +1,4 @@
-package DFS;
+package 탐색;
 
 class 재귀로_값할당 {
 
