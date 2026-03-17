@@ -1,8 +1,10 @@
+package 자료구조;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution {
+class 시소짝꿍 {
     public long solution(int[] weights) {
         long answer = 0;
 
