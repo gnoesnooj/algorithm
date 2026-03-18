@@ -1,9 +1,11 @@
+package 자료구조;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
-class Solution {
+class 과제진행하기 {
     public String[] solution(String[][] plans) {
         List<Homework> homeworks = new ArrayList<>();
         for (String[] plan : plans) {
