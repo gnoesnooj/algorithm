@@ -1,11 +1,12 @@
+package 자료구조;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
-class Solution {
+class 이중우선순위큐 {
     public int[] solution(String[] operations) {
-        int[] answer = {};
         PriorityQueue<Integer> minPQ = new PriorityQueue<>();
         PriorityQueue<Integer> maxPQ = new PriorityQueue<>(Collections.reverseOrder());
 
