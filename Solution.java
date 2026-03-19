@@ -1,58 +1,58 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 class Solution {
     public String[] solution(String[][] plans) {
         List<Homework> homeworks = new ArrayList<>();
+
         for (String[] plan : plans) {
-            homeworks.add(new Homework(plan[0], convertTime(plan[1]), Integer.parseInt(plan[2])));
+            homeworks.add(new Homework(
+                    plan[0],
+                    convertTime(plan[1]),
+                    Integer.parseInt(plan[2])
+            ));
         }
+
         homeworks.sort(Comparator.comparingInt(h -> h.start));
 
-        Stack<Homework> s = new Stack<>();
-        List<String> endingList = new ArrayList<>();
-        int index = 0;
-        s.add(homeworks.get(index++));
-        while (true) {
-            if (s.isEmpty()) {
-                if (index >= homeworks.size()) {
-                    break;
-                } else {
-                    s.add(homeworks.get(index++));
+        Stack<Homework> stack = new Stack<>();
+        List<String> result = new ArrayList<>();
+
+        int currentTime = homeworks.get(0).start;
+
+        for (int i = 0; i < homeworks.size(); i++) {
+            Homework current = homeworks.get(i);
+
+            while (!stack.isEmpty() && currentTime < current.start) {
+                Homework top = stack.pop();
+
+                if (currentTime + top.playTime <= current.start) {
+                    currentTime += top.playTime;
+                    result.add(top.name);
                 }
-            } else {
-                if (index >= homeworks.size()) {
-                    endingList.add(s.pop().name);
-                } else {
-                    Homework peek = s.peek();
-                    Homework next = homeworks.get(index);
-                    if (peek.start + peek.playTime <= next.start) { // 끝났어야함
-                        endingList.add(s.pop().name);
-                    } else if (peek.start + peek.playTime > next.start) {
-                        s.add(next);
-                        index++;
-                    }
+                else {
+                    top.playTime -= (current.start - currentTime);
+                    stack.push(top);
+                    break;
                 }
             }
+
+            stack.push(new Homework(current.name, current.start, current.playTime));
+            currentTime = current.start;
         }
 
-        String[] answer = new String[endingList.size()];
-        for (int i = 0; i < endingList.size(); i++) {
-            answer[i] = endingList.get(i);
+        while (!stack.isEmpty()) {
+            result.add(stack.pop().name);
         }
-        return answer;
+
+        return result.toArray(new String[0]);
     }
 
-    private int convertTime(String stringTime) {
-        String[] splitted = stringTime.split(":");
-        int hour = 60 * Integer.valueOf(splitted[0]);
-        int minute = Integer.valueOf(splitted[1]);
-        return hour + minute;
+    private int convertTime(String time) {
+        String[] t = time.split(":");
+        return Integer.parseInt(t[0]) * 60 + Integer.parseInt(t[1]);
     }
 
-    class Homework {
+    static class Homework {
         String name;
         int start;
         int playTime;
